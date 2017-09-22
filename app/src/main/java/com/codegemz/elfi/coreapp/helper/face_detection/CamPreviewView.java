@@ -212,14 +212,14 @@ public class CamPreviewView extends SurfaceView implements SurfaceHolder.Callbac
         mWorkBitmap = BitmapFactory.decodeStream(
                 new ByteArrayInputStream(baout.toByteArray()), null, bfo);
 
-        if(((BrainActivity)context).isTargetFollowing())
-            findTheBall(mWorkBitmap);
-        else
-            isNewTarget = true;
+//        if(((BrainActivity)context).isTargetFollowing())
+//            findTheBall(mWorkBitmap);
+//        else
+//            isNewTarget = true;
 
         Arrays.fill(mFaces, null);
         Arrays.fill(eyesMidPts, null);
-        if(!((BrainActivity)context).isTargetFollowing())
+        //if(!((BrainActivity)context).isTargetFollowing())
            mFaceDetector.findFaces(mWorkBitmap, mFaces);
 
         for (int i = 0; i < mFaces.length; i++)
@@ -269,130 +269,130 @@ public class CamPreviewView extends SurfaceView implements SurfaceHolder.Callbac
 
     String last_command = "pesik_right_step";
     boolean isNewTarget = true;
-    private void findTheBall(Bitmap mWorkBitmap) {
+//    private void findTheBall(Bitmap mWorkBitmap) {
+//
+//        //Log.e("bmp center: ", "" + mWorkBitmap.getWidth() + ":" + mWorkBitmap.getHeight() );
+//
+//        pixels = new int[mWorkBitmap.getWidth() * mWorkBitmap.getHeight()];
+//        mWorkBitmap.getPixels(pixels, 0, mWorkBitmap.getWidth(), 0, 0, mWorkBitmap.getWidth(), mWorkBitmap.getHeight());
+//
+//        int pixel = pixels[mWorkBitmap.getWidth()/2 + mWorkBitmap.getWidth() * mWorkBitmap.getHeight()/2];
+//        int R1 = (pixel >> 16) & 0xff;
+//        int G1 = (pixel >> 8) & 0xff;
+//        int B1 = (pixel & 0xff);
+//        if(((BrainActivity)context).isTargetFollowing() && isNewTarget) {
+//            Log.e("center: ", "(" + R1 + ":" + G1 + ":" + B1 + ")");
+//            targetR = R1;
+//            targetG = G1;
+//            targetB = B1;
+//
+//            isNewTarget = false;
+//        }
+//
+//        forwardSector = mWorkBitmap.getWidth()/4;
+//
+//
+//
+//        String command = null;
+//        if(targetFoundInCentralSector()) {
+//            command = "pesik_go";
+//            if(last_command != command)
+//                send_bt(command);
+//            last_command = command;
+//            return;
+//        }
+//        if(targetFoundInLeftSector()) {
+//            command = "pesik_left_step";
+//            if(last_command != command)
+//                send_bt(command);
+//            last_command = command;
+//            return;
+//        }
+//
+//        if(last_command == "pesik_left_step")
+//            command = "pesik_left_step";
+//        else
+//            command = "pesik_right_step";
+//        Log.e("find the ball: ", command);
+//        send_bt(command);
+//        last_command = command;
+//    }
 
-        //Log.e("bmp center: ", "" + mWorkBitmap.getWidth() + ":" + mWorkBitmap.getHeight() );
-
-        pixels = new int[mWorkBitmap.getWidth() * mWorkBitmap.getHeight()];
-        mWorkBitmap.getPixels(pixels, 0, mWorkBitmap.getWidth(), 0, 0, mWorkBitmap.getWidth(), mWorkBitmap.getHeight());
-
-        int pixel = pixels[mWorkBitmap.getWidth()/2 + mWorkBitmap.getWidth() * mWorkBitmap.getHeight()/2];
-        int R1 = (pixel >> 16) & 0xff;
-        int G1 = (pixel >> 8) & 0xff;
-        int B1 = (pixel & 0xff);
-        if(((BrainActivity)context).isTargetFollowing() && isNewTarget) {
-            Log.e("center: ", "(" + R1 + ":" + G1 + ":" + B1 + ")");
-            targetR = R1;
-            targetG = G1;
-            targetB = B1;
-
-            isNewTarget = false;
-        }
-
-        forwardSector = mWorkBitmap.getWidth()/4;
-
-
-
-        String command = null;
-        if(targetFoundInCentralSector()) {
-            command = "pesik_go";
-            if(last_command != command)
-                send_bt(command);
-            last_command = command;
-            return;
-        }
-        if(targetFoundInLeftSector()) {
-            command = "pesik_left_step";
-            if(last_command != command)
-                send_bt(command);
-            last_command = command;
-            return;
-        }
-
-        if(last_command == "pesik_left_step")
-            command = "pesik_left_step";
-        else
-            command = "pesik_right_step";
-        Log.e("find the ball: ", command);
-        send_bt(command);
-        last_command = command;
-    }
-
-    private void send_bt(String command) {
-        Connector connector = ((BrainApp) context.getApplicationContext()).getConnector();
-        if(connector.connect())
-            connector.writeSingleMessage(command);
-        else{
-            Log.d(connector.getTag(), "BT connection failed");
-        }
-    }
-
-
-    private boolean targetFoundInRightSector() {
-        int w = mWorkBitmap.getWidth();
-        for(int x = w/2 + forwardSector; x < w; x+=5)
-            for(int y = 0; y<mWorkBitmap.getHeight(); y+=10) {
-                int pixel = pixels[x + y * w];
-                int R1 = (pixel >> 16) & 0xff;
-                int G1 = (pixel >> 8) & 0xff;
-                int B1 = (pixel & 0xff);
-
-                if ((R1 > (targetR - precission)) && (R1 < (targetR + precission)) &&
-                        (G1 > (targetG - precission)) && (G1 < (targetG + precission)) &&
-                        (B1 > (targetB - precission)) && (B1 < (targetB + precission))) {
-
-                    Log.e("find the ball: ", "right");
-                    return true;
-                }
-            }
-        return false;
-    }
-
-    private boolean targetFoundInLeftSector() {
-        int w = mWorkBitmap.getWidth();
-        for(int x = 0; x < w/2 - forwardSector; x+=5)
-            for(int y = 0; y<mWorkBitmap.getHeight(); y+=10) {
-                int pixel = pixels[x + y * w];
-                int R1 = (pixel >> 16) & 0xff;
-                int G1 = (pixel >> 8) & 0xff;
-                int B1 = (pixel & 0xff);
-
-                if ((R1 > (targetR - precission)) && (R1 < (targetR + precission)) &&
-                        (G1 > (targetG - precission)) && (G1 < (targetG + precission)) &&
-                        (B1 > (targetB - precission)) && (B1 < (targetB + precission))) {
-
-                    Log.e("find the ball: ", "left");
-                    return true;
-                }
-            }
-        return false;
-    }
-
-    private boolean targetFoundInCentralSector() {
-        int w = mWorkBitmap.getWidth();
-        for(int x = w/2 - forwardSector; x < w/2 + forwardSector; x+=5)
-            for(int y = 0; y<mWorkBitmap.getHeight(); y+=10) {
-                int pixel = pixels[x + y * w];
-                int R1 = (pixel >> 16) & 0xff;
-                int G1 = (pixel >> 8) & 0xff;
-                int B1 = (pixel & 0xff);
-
-                if ((R1 > (targetR - precission)) && (R1 < (targetR + precission)) &&
-                        (G1 > (targetG - precission)) && (G1 < (targetG + precission)) &&
-                        (B1 > (targetB - precission)) && (B1 < (targetB + precission))) {
-
-                    Log.e("find the ball: ", "forward");
-                    return true;
-                }
-            }
-        return false;
-    }
+//    private void send_bt(String command) {
+//        Connector connector = ((BrainApp) context.getApplicationContext()).getConnector();
+//        if(connector.connect())
+//            connector.writeSingleMessage(command);
+//        else{
+//            Log.d(connector.getTag(), "BT connection failed");
+//        }
+//    }
+//
+//
+//    private boolean targetFoundInRightSector() {
+//        int w = mWorkBitmap.getWidth();
+//        for(int x = w/2 + forwardSector; x < w; x+=5)
+//            for(int y = 0; y<mWorkBitmap.getHeight(); y+=10) {
+//                int pixel = pixels[x + y * w];
+//                int R1 = (pixel >> 16) & 0xff;
+//                int G1 = (pixel >> 8) & 0xff;
+//                int B1 = (pixel & 0xff);
+//
+//                if ((R1 > (targetR - precission)) && (R1 < (targetR + precission)) &&
+//                        (G1 > (targetG - precission)) && (G1 < (targetG + precission)) &&
+//                        (B1 > (targetB - precission)) && (B1 < (targetB + precission))) {
+//
+//                    Log.e("find the ball: ", "right");
+//                    return true;
+//                }
+//            }
+//        return false;
+//    }
+//
+//    private boolean targetFoundInLeftSector() {
+//        int w = mWorkBitmap.getWidth();
+//        for(int x = 0; x < w/2 - forwardSector; x+=5)
+//            for(int y = 0; y<mWorkBitmap.getHeight(); y+=10) {
+//                int pixel = pixels[x + y * w];
+//                int R1 = (pixel >> 16) & 0xff;
+//                int G1 = (pixel >> 8) & 0xff;
+//                int B1 = (pixel & 0xff);
+//
+//                if ((R1 > (targetR - precission)) && (R1 < (targetR + precission)) &&
+//                        (G1 > (targetG - precission)) && (G1 < (targetG + precission)) &&
+//                        (B1 > (targetB - precission)) && (B1 < (targetB + precission))) {
+//
+//                    Log.e("find the ball: ", "left");
+//                    return true;
+//                }
+//            }
+//        return false;
+//    }
+//
+//    private boolean targetFoundInCentralSector() {
+//        int w = mWorkBitmap.getWidth();
+//        for(int x = w/2 - forwardSector; x < w/2 + forwardSector; x+=5)
+//            for(int y = 0; y<mWorkBitmap.getHeight(); y+=10) {
+//                int pixel = pixels[x + y * w];
+//                int R1 = (pixel >> 16) & 0xff;
+//                int G1 = (pixel >> 8) & 0xff;
+//                int B1 = (pixel & 0xff);
+//
+//                if ((R1 > (targetR - precission)) && (R1 < (targetR + precission)) &&
+//                        (G1 > (targetG - precission)) && (G1 < (targetG + precission)) &&
+//                        (B1 > (targetB - precission)) && (B1 < (targetB + precission))) {
+//
+//                    Log.e("find the ball: ", "forward");
+//                    return true;
+//                }
+//            }
+//        return false;
+//    }
 
     public void startTalk() {
         if(talkStateHelper.getTalkState() == TalkStateType.Inactive) {
             talkStateHelper.setTalkSate(TalkStateType.Active);
-            Intent startRecoIntent = new Intent(VoiceRecoHelper.START_RECO_NOTIFICATION);
-            getContext().sendBroadcast(startRecoIntent);
+            //Intent startRecoIntent = new Intent(VoiceRecoHelper.START_RECO_NOTIFICATION);
+            //getContext().sendBroadcast(startRecoIntent);
         }
         if(talkStateHelper.getTalkState() == TalkStateType.Active) {
             talkStateHelper.setTalkSate(TalkStateType.Active); // touch last update time

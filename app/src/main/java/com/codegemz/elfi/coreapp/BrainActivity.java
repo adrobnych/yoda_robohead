@@ -74,15 +74,6 @@ public class BrainActivity extends BaseActivity {
     private ImageView iv;
     private TextToSpeechHelper tthelper;
     private TextView tv;
-    private SpeechRecognizer mSpeechRecognizer;
-
-    public VoiceRecognitionListener getVrl() {
-        return vrl;
-    }
-
-    private VoiceRecognitionListener vrl;
-    private BTForBrain bt;
-    private AIDataService aiDataService;
 
     public WifiManager getWifi() {
         return wifi;
@@ -96,28 +87,18 @@ public class BrainActivity extends BaseActivity {
 
     private  BroadcastReceiver wifiReciever;
 
-    public boolean isTargetFollowing() {
-        return targetFollowing;
-    }
+    //public XMPPClientBinder getXmppBinder() {
+    //    return xmppBinder;
+    //}
 
-    public void setTargetFollowing(boolean targetFollowing) {
-        this.targetFollowing = targetFollowing;
-    }
-
-    private boolean targetFollowing;
-
-    public XMPPClientBinder getXmppBinder() {
-        return xmppBinder;
-    }
-
-    @Inject
-    XMPPClientBinder xmppBinder;
+    //@Inject
+    //XMPPClientBinder xmppBinder;
 
     public CamPreviewView getCamPreviewView(){
         return mCamPreviewView;
     }
     public TalkStateHelper getTalkStateHelper(){ return talkStateHelper; }
-    public AIDataService getAIDataService(){ return aiDataService;}
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -157,27 +138,12 @@ public class BrainActivity extends BaseActivity {
                 AIConfiguration.SupportedLanguages.English,
                 AIConfiguration.RecognitionEngine.System);
 
-        aiDataService = new AIDataService(this, config);
-
-        try {
-            mSpeechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
-            vrl = new VoiceRecognitionListener(tv, tthelper, this);
-            mSpeechRecognizer.setRecognitionListener(vrl);
-        }
-        catch (Exception e){
-            Log.e("voice reco trouble: ", e.toString());
-        }
-
         (new AntiEchoStateHelper(this)).createDefaultEchoSet();
-
-        bt = new BTForBrain(this);
-        bt.initialize();
 
         wifi = (WifiManager)getSystemService(Context.WIFI_SERVICE);
 
-        xmppBinder.initWithContext(this).processLogin();
+        //xmppBinder.initWithContext(this).processLogin();
 
-        targetFollowing = false;
     }
 
     private void onPreviewClick() {
@@ -214,7 +180,7 @@ public class BrainActivity extends BaseActivity {
                 final Runnable runnable = new Runnable() {
                     @Override
                     public void run() {
-                        getVrl().analyse(command);
+                        //getVrl().analyse(command);
                     }
                 };
                 handler.postDelayed(runnable, delay * 1000);
@@ -272,13 +238,10 @@ public class BrainActivity extends BaseActivity {
             Log.d(TAG,"!screenLocked");
         }
 
-        if (!QBChatService.isInitialized()) {
-            QBChatService.init(this);
-        }
+//        if (!QBChatService.isInitialized()) {
+//            QBChatService.init(this);
+//        }
 
-        registerReceiver(speechRecoBroadcastReceiver, new IntentFilter(VoiceRecoHelper.START_RECO_NOTIFICATION));
-        //tv.setText(R.string.listening_enabled);
-        doSpeechRecognition();
     }
 
     @Override
@@ -286,13 +249,6 @@ public class BrainActivity extends BaseActivity {
         Log.d(TAG, "onPause");
         mCamPreviewView.releaseCamera();
         super.onPause();
-        unregisterReceiver(speechRecoBroadcastReceiver);
-        try{
-            this.unregisterReceiver(bt.mReceiver);
-        }
-        catch (IllegalArgumentException e){
-        }
-        //bt.connector.close();
     }
 
     @Override
@@ -300,7 +256,6 @@ public class BrainActivity extends BaseActivity {
         super.onDestroy();
         //((BrainApp)getApplication()).setBrainActivity(null);
         try{
-            mSpeechRecognizer.destroy();
             tthelper.release();
         }
         catch (Exception e) {
@@ -316,16 +271,11 @@ public class BrainActivity extends BaseActivity {
     public void onFaceClick(View v){
         changeListeningMode();
         //stop motors
-        Connector connector = ((BrainApp)getApplicationContext()).getConnector();
-        if(connector.connect())
-            connector.writeSingleMessage("motor_AB_STOP");
-        else{
-            Log.d(connector.getTag(), "BT connection failed");
-        }
+
         WorkflowStateHelper wsh = new WorkflowStateHelper(this);
         wsh.createOrUpdate(WorkflowType.DANCE, "", "stop");
         stopService(new Intent(this, MusicService.class));
-        targetFollowing = false;
+
     }
 
     private void changeListeningMode() {
@@ -357,40 +307,6 @@ public class BrainActivity extends BaseActivity {
             frameAnimation.start();
         }
     }
-
-
-    public void doSpeechRecognition() {
-        boolean inEmulator = "generic".equals(Build.BRAND.toLowerCase());
-        if(!inEmulator)
-            doSpeechRecognition2();
-    }
-    public void doSpeechRecognition2() {
-        //added reinit of SpeechRecognizer becouse onError caused stop of spoken loop on Nexus 7
-        mSpeechRecognizer.destroy();
-        mSpeechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
-        mSpeechRecognizer.setRecognitionListener(vrl);
-
-        Intent recognitionIntent =
-                new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        //recognitionIntent.putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS,
-        //        true);
-        //recognitionIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, this.getPackageName());
-        recognitionIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE,
-                "en-US");
-
-        //mSpeechRecognizer.stopListening();
-        mSpeechRecognizer.startListening(recognitionIntent);
-    }
-
-    public BroadcastReceiver speechRecoBroadcastReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            tv.setText(R.string.listening_enabled);
-            doSpeechRecognition();
-        }
-    };
-
-
 
     public void startWifiScannerAndNotify(WifiObserver wo) {
 

@@ -53,7 +53,7 @@ public class VoiceRecognitionListener implements RecognitionListener {
         aeStateHelper = new AntiEchoStateHelper(ctx);
         simpleReflexConfigurator.loadReflexes();
         apiAiCommandConfigurator.loadCommands();
-        aiDataService = ((BrainActivity)ctx).getAIDataService();
+        //aiDataService = ((BrainActivity)ctx).getAIDataService();
     }
 
     @Override

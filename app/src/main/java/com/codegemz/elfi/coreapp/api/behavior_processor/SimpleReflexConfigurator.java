@@ -145,7 +145,7 @@ public class SimpleReflexConfigurator {
             @Override
             public void perform() {
 
-                ((BrainActivity)context).getXmppBinder().listenAndAnswer();
+                //((BrainActivity)context).getXmppBinder().listenAndAnswer();
                 Log.e("SimpleReflexConfig: ", "Poltergeist started");
             }
         });
@@ -367,12 +367,12 @@ public class SimpleReflexConfigurator {
             }
         });
 
-        simpleReflexMap.put("(follow this target|follow this|follow the ball)", new SimpleReflexCommand() {
-            @Override
-            public void perform() {
-                ((BrainActivity)context).setTargetFollowing(true);
-            }
-        });
+//        simpleReflexMap.put("(follow this target|follow this|follow the ball)", new SimpleReflexCommand() {
+//            @Override
+//            public void perform() {
+//                ((BrainActivity)context).setTargetFollowing(true);
+//            }
+//        });
 
         simpleReflexMap.put("(guard the house|enable security)", new SimpleReflexCommand() {
             @Override

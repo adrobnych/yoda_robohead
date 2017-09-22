@@ -147,22 +147,8 @@ public class XMPPClientBinder {
         public void processMessage(QBPrivateChat privateChat, final QBChatMessage chatMessage) {
             Log.e("Process message: ", "Message received: " + chatMessage.getBody());
 
-            ((BrainActivity)context).getVrl().analyse(chatMessage.getBody());
+            //((BrainActivity)context).getVrl().analyse(chatMessage.getBody());
 
-//            QBPrivateChatManager privateChatManager = QBChatService.getInstance().getPrivateChatManager();
-//
-//            QBChatMessage chatAnswerMessage = new QBChatMessage();
-//            chatAnswerMessage.setBody("test passed: " + chatMessage.getBody().toString());
-//            chatAnswerMessage.setProperty("save_to_history", "1"); // Save a message to history
-//
-//
-//            try {
-//                privateChat.sendMessage(chatAnswerMessage);
-//            } catch (XMPPException e) {
-//                Log.e("processMessage:", "Problem: " + e);
-//            } catch (SmackException.NotConnectedException e) {
-//                Log.e("processMessage:", "Problem: " + e);
-//            }
         }
 
         @Override
