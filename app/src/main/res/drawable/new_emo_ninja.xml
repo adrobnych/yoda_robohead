@@ -1,0 +1,7 @@
+<animation-list android:oneshot="false" xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/new_emo_ninja0" android:duration="400" />
+    <item android:drawable="@drawable/new_emo_ninja1" android:duration="200" />
+    <item android:drawable="@drawable/new_emo_ninja2" android:duration="200" />
+    <item android:drawable="@drawable/new_emo_ninja3" android:duration="200" />
+    <item android:drawable="@drawable/new_emo_ninja0" android:duration="400" />
+</animation-list>

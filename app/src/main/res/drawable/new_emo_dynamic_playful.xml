@@ -1,0 +1,7 @@
+<animation-list android:oneshot="true" xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/new_emo_dynamic_playful0" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_playful1" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_playful2" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_playful3" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_playful0" android:duration="100" />
+</animation-list>

@@ -1,0 +1,11 @@
+<animation-list android:oneshot="true" xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/new_emo_dynamic_loving0" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_loving1" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_loving2" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_loving3" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_loving4" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_loving5" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_loving6" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_loving7" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_loving8" android:duration="100" />
+</animation-list>

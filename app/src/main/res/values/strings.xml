@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">COREApp</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="listening_disabled">Listening disabled</string>
+    <string name="listening_enabled">Listening enabled</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <string-array name="demo_commands">
+        <item>excursion point 1</item>
+        <item>excursion point 2</item>
+        <item>excursion point 3</item>
+        <item>hi</item>
+        <item>what is gravity</item>
+        <item>who is Nicola Tesla</item>
+        <item>fight</item>
+        <item>left hook</item>
+        <item>left block</item>
+        <item>block</item>
+        <item>strike</item>
+        <item>fatality</item>
+        <item>bingo</item>
+        <item>program</item>
+        <item>move forward</item>
+        <item>move left</item>
+        <item>move right</item>
+        <item>follow this target</item>
+        <item>show me a hexagon</item>
+        <item>show me a square</item>
+        <item>kickstarter</item>
+        <item>what is your name</item>
+        <item>what can you do</item>
+        <item>party time</item>
+        <item>play music</item>
+        <item>give me a drink</item>
+        <item>show me other robots</item>
+        <item>show me a video about you</item>
+        <item>where\'re you</item>
+        <item>go to kitchen</item>
+    </string-array>
+
+    <string-array name="demo_interval">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+    </string-array>
+</resources>

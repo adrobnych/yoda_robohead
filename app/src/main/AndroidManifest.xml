@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.codegemz.elfi.coreapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <application
+        android:name=".BrainApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".BrainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- API Content Providers -->
+        <provider
+            android:name=".api.StateProvider"
+            android:authorities="com.codegemz.elfi.coreapp.api.state_provider"
+            android:exported="true"
+            android:grantUriPermissions="true" />
+        <provider
+            android:name=".api.PhraseIntentProvider"
+            android:authorities="com.codegemz.elfi.coreapp.api.phrase_intent_provider"
+            android:exported="true"
+            android:grantUriPermissions="true" />
+        <provider
+            android:name=".api.external__algorithms.AlgorithmProvider"
+            android:authorities="com.codegemz.elfi.coreapp.api.algorithm_provider"
+            android:exported="true"
+            android:grantUriPermissions="true" />
+        <provider
+            android:name=".api.external__algorithms.AlgorithmStepProvider"
+            android:authorities="com.codegemz.elfi.coreapp.api.algorithm_step_provider"
+            android:exported="true"
+            android:grantUriPermissions="true" />
+        <provider
+            android:name=".api.IndoorLocationProvider"
+            android:authorities="com.codegemz.elfi.coreapp.api.indoor_location_provider"
+            android:exported="true"
+            android:grantUriPermissions="true" />
+        <provider
+            android:name=".api.external__algorithms.AlgorithmBundleProvider"
+            android:authorities="com.codegemz.elfi.coreapp.api.algorithm_bundle_provider"
+            android:exported="true"
+            android:grantUriPermissions="true" />
+        <provider
+            android:name=".api.FamilyMemberProvider"
+            android:authorities="com.codegemz.elfi.coreapp.api.family_member_provider"
+            android:exported="true"
+            android:grantUriPermissions="true" />
+
+        <!-- API Behavior Services -->
+
+        <receiver
+            android:name=".api.behavior_processor.EmotionManagerBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.codegemz.elfi.coreapp.api.SET_EMOTION" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".api.behavior_processor.SpeakService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".MusicService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".api.event_generator.PeriodicAlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".api.behavior_processor.SpeakBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.codegemz.elfi.coreapp.api.SPEAK" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" />
+
+        <receiver
+            android:name=".api.ExternalCommandReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.codegemz.elfi.coreapp.api.EXEC_COMMAND" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".api.ExtCommandIntentService"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

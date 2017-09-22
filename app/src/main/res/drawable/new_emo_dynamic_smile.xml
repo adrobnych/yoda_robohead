@@ -1,0 +1,8 @@
+<animation-list android:oneshot="true" xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/new_emo_dynamic_smile0" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_smile1" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_smile2" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_smile3" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_smile4" android:duration="100" />
+    <item android:drawable="@drawable/new_emo_dynamic_smile5" android:duration="100" />
+</animation-list>
