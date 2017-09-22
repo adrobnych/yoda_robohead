@@ -1,6 +1,10 @@
 package com.codegemz.elfi.coreapp;
 
 import android.app.Application;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 
 import com.codegemz.elfi.coreapp.api.behavior_processor.movement.BodyConnectionHelper.Connector;
 import com.codegemz.elfi.coreapp.module.wifi_for_indoor.XMPPModule;

@@ -119,6 +119,15 @@
             android:name=".api.ExtCommandIntentService"
             android:exported="false" />
 
+        <receiver
+            android:name=".TTSReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.elfirobotics.beehive.sense_intents.TTS.TEXT_TO_SAY" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
