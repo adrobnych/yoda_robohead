@@ -36,6 +36,11 @@ import java.util.List;
  */
 public class CamPreviewView extends SurfaceView implements SurfaceHolder.Callback
         , Camera.PreviewCallback {
+
+    private static final String LIFEPIXEL = "com.elfirobotics.beehive.lifepixel";
+    private static final String EVENT = "com.elfirobotics.beehive.lifepixel.sense_intents.EVENT";
+    private static final String RAW_VISITOR_ACTION = "com.elfirobotics.beehive.sense_intents.VISITOR.RAW";
+
     private static final String TAG = "Preview";
     private SurfaceHolder mHolder;
     private Camera mCamera;
@@ -231,8 +236,8 @@ public class CamPreviewView extends SurfaceView implements SurfaceHolder.Callbac
                 eyesDistance[i] = face.eyesDistance();
                 eyesMidPts[i] = eyesMP;
 
-                //BrainActivity.beep();
-                startTalk();
+                //startTalk();
+                verifyAndSendRawVisitorIntent();
 
                 if (DEBUG)
                 {
@@ -254,6 +259,20 @@ public class CamPreviewView extends SurfaceView implements SurfaceHolder.Callbac
 
         // Requeue the buffer so we get called again
         mCamera.addCallbackBuffer(data);
+    }
+
+    private long lastTimeFaceDetectedMillis = 0;
+
+    private void verifyAndSendRawVisitorIntent() {
+        long currentMillis = System.currentTimeMillis();
+        if(currentMillis - lastTimeFaceDetectedMillis > 5000){
+            Intent rawVisitorIntent = new Intent(LIFEPIXEL);
+            rawVisitorIntent.putExtra(EVENT, RAW_VISITOR_ACTION);
+            context.sendBroadcast(rawVisitorIntent);
+            Log.e(TAG, "intent was thrown to " + RAW_VISITOR_ACTION);
+
+            lastTimeFaceDetectedMillis = currentMillis;
+        }
     }
 
     private int[] pixels;
