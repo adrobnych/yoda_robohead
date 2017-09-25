@@ -45,6 +45,7 @@ dependencies {
     androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.1'
     compile "com.tojc.ormlite.android:ormlite-content-provider-library:1.0.4" // @aar or @jar
     compile project(':api_contracts')
+    compile 'com.koushikdutta.ion:ion:2.+'
 
     compile "com.squareup.dagger:dagger:$dagger_version"
     provided "com.squareup.dagger:dagger-compiler:$dagger_version"

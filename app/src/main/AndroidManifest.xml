@@ -127,7 +127,14 @@
                 <action android:name="com.elfirobotics.beehive.sense_intents.TTS.TEXT_TO_SAY" />
             </intent-filter>
         </receiver>
-
+        <receiver
+            android:name=".ShowMapReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.elfirobotics.beehive.sense_intents.SHOP.MAP_TO_SHOW" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -71,6 +71,11 @@ public class BrainActivity extends BaseActivity {
     }
 
     private TalkStateHelper talkStateHelper;
+
+    public ImageView getIv() {
+        return iv;
+    }
+
     private ImageView iv;
     private TextToSpeechHelper tthelper;
     private TextView tv;

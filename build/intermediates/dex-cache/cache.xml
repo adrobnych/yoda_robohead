@@ -12,15 +12,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/libs/quickblox-android-sdk-messages-2.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d05f3f2a86d1797d14e0e487c3fd35c43ac9717a">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-messages-2.3.1_63d3bff3551bdafb1e97a3d263856f9a42cc2706.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/libs/quickblox-android-sdk-videochat-2.3.1.jar"
         jumboMode="false"
         optimize="true"
@@ -36,24 +27,6 @@
         revision="25.0.0"
         sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
         <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/classes_6335135e5ce2b0b2a661a7fd4e1dabf87f304691.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/api_contracts/build/intermediates/bundles/default/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3586093fa27e49d34cc33cd4145fd4a70a7d983b">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/build/intermediates/pre-dexed/debug/classes_78130dcd21016b6372f9d770f9788d115f365b93.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/libs/quickblox-android-sdk-content-2.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="9fadf6a10e7440827b72006794a5893539994de2">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-content-2.3.1_42c7708db55b4905ca37e22556c2c58fca67dc07.jar" />
     </item>
     <item
         is-multidex="false"
@@ -75,30 +48,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/adrobnych/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.0/support-annotations-22.1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="281bc6c58ecb3644c23fbc5ee0452019f67b4d5d">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.0_23bcb34f73b92ebb590c8373f0ffea22808cf4c0.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/libs/quickblox-android-sdk-core-2.3.1.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="1127a5be0704e4a53e86ffc0145bd96d4b9e4817">
         <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-core-2.3.1_9f4db040d1b83efe993a7a302e67a75bbd105457.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/adrobnych/.android/build-cache/73e9ad0f8c56d2b39f6e8edb276f14e221b9c568/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="4e86ef3cee60d127eb220de841beca6854d684fd">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/classes_09e549365d83f518d3be55baef3c517b2a90c5af.jar" />
     </item>
     <item
         is-multidex="false"
@@ -111,15 +66,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/adrobnych/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.1/905075e6c80f206bbe6cf1e809d2caa69f420c76/commons-lang3-3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="905075e6c80f206bbe6cf1e809d2caa69f420c76">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/commons-lang3-3.1_162cb1fe3108d77dd8f4a70481f2986ce1eceb72.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/libs/quickblox-android-sdk-customobjects-2.3.1.jar"
         jumboMode="false"
         optimize="true"
@@ -135,60 +81,6 @@
         revision="25.0.0"
         sha1="905075e6c80f206bbe6cf1e809d2caa69f420c76">
         <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/commons-lang3-3.1_162cb1fe3108d77dd8f4a70481f2986ce1eceb72.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/libs/quickblox-android-sdk-customobjects-2.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="1eebb0afbc0c2b114760924c1954031414a40acd">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-customobjects-2.3.1_5c948a3d7696f358352fdbe0a39d60ec345727e7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/libs/quickblox-android-sdk-customobjects-2.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="1eebb0afbc0c2b114760924c1954031414a40acd">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-customobjects-2.3.1_45eaef0436de326352a180f80a01f27fbd9aaa42.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/adrobnych/.gradle/caches/modules-2/files-2.1/com.j256.ormlite/ormlite-android/4.48/afa06f539a4026c10b247386312aa67404b80a16/ormlite-android-4.48.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="afa06f539a4026c10b247386312aa67404b80a16">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/ormlite-android-4.48_7ce1a3ee4c341af450b58e84908b0f0eaf924108.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/libs/quickblox-android-sdk-videochat-2.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="458785b63a4c7c658ab27fde399d85d85d66529f">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-videochat-2.3.1_a1f7f11b881a0957019cf5063937f74cfb4092e6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/libs/quickblox-android-sdk-content-2.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="9fadf6a10e7440827b72006794a5893539994de2">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-content-2.3.1_8c37c3ef1b3d277b3583a14cf2dd5defc397ac2d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/adrobnych/android-studio/gradle/m2repository/commons-io/commons-io/2.4/commons-io-2.4.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/commons-io-2.4_77acdd8284e2b2038995dfc30acd54a813f4e6d4.jar" />
     </item>
     <item
         is-multidex="false"
@@ -228,15 +120,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/libs/quickblox-android-sdk-core-2.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="1127a5be0704e4a53e86ffc0145bd96d4b9e4817">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-core-2.3.1_93777ce868d5f62f99b41e404a5475186e987a9c.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/libs/quickblox-android-sdk-videochat-webrtc-2.3.1.jar"
         jumboMode="false"
         optimize="true"
@@ -246,39 +129,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/libs/quickblox-android-sdk-location-2.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="77b5109a4fbcdffb21e43040e50fcefe22b03895">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-location-2.3.1_6625a6a49af03df62e8cd8b77d9a04ac85ae4ccd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/adrobnych/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.2/3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf/gson-2.8.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/gson-2.8.2_4bc9eed812d9b8306b71bda22f26b9f51c410958.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/libs/quickblox-android-sdk-chat-2.3.1.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="4cf1dd71c576bba505a538da346c03b45daca05e">
         <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-chat-2.3.1_63b98a463a0505409a83325b8477ae6290b56c16.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/libs/quickblox-android-sdk-videochat-webrtc-2.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="5389ed2546586d2b052581d6347270e16a488391">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-videochat-webrtc-2.3.1_5a3111966c3915bdcbf951101b65e557faabb77c.jar" />
     </item>
     <item
         is-multidex="false"
@@ -297,6 +153,15 @@
         revision="21.1.2"
         sha1="77b5109a4fbcdffb21e43040e50fcefe22b03895">
         <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-location-2.3.1_3c593318e9ec5573094b121e66517da6edd36f1e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/.android/build-cache/4507a301b1710e7a38c3b9fa29b8232130865bd5/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0772eec11be9e3803736882ae4bec4078986910e">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/build/intermediates/pre-dexed/debug/classes_06188f0d4225850f6fc37f8c8bea4176f07851d9.jar" />
     </item>
     <item
         is-multidex="false"
@@ -363,15 +228,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/libs/quickblox-android-sdk-core-2.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="1127a5be0704e4a53e86ffc0145bd96d4b9e4817">
-        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-core-2.3.1_9f4db040d1b83efe993a7a302e67a75bbd105457.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/adrobnych/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
         jumboMode="false"
         optimize="true"
@@ -387,6 +243,168 @@
         revision="25.0.0"
         sha1="d05f3f2a86d1797d14e0e487c3fd35c43ac9717a">
         <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-messages-2.3.1_1ec7e1ce92d26023329f10b2db4e6a046636dc7d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/libs/quickblox-android-sdk-messages-2.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d05f3f2a86d1797d14e0e487c3fd35c43ac9717a">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-messages-2.3.1_63d3bff3551bdafb1e97a3d263856f9a42cc2706.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/api_contracts/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3586093fa27e49d34cc33cd4145fd4a70a7d983b">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/build/intermediates/pre-dexed/debug/classes_78130dcd21016b6372f9d770f9788d115f365b93.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/libs/quickblox-android-sdk-content-2.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9fadf6a10e7440827b72006794a5893539994de2">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-content-2.3.1_42c7708db55b4905ca37e22556c2c58fca67dc07.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.0/support-annotations-22.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="281bc6c58ecb3644c23fbc5ee0452019f67b4d5d">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.0_23bcb34f73b92ebb590c8373f0ffea22808cf4c0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/.android/build-cache/73e9ad0f8c56d2b39f6e8edb276f14e221b9c568/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4e86ef3cee60d127eb220de841beca6854d684fd">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/classes_09e549365d83f518d3be55baef3c517b2a90c5af.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.1/905075e6c80f206bbe6cf1e809d2caa69f420c76/commons-lang3-3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="21.1.2"
+        sha1="905075e6c80f206bbe6cf1e809d2caa69f420c76">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/commons-lang3-3.1_162cb1fe3108d77dd8f4a70481f2986ce1eceb72.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/libs/quickblox-android-sdk-customobjects-2.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1eebb0afbc0c2b114760924c1954031414a40acd">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-customobjects-2.3.1_5c948a3d7696f358352fdbe0a39d60ec345727e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/libs/quickblox-android-sdk-customobjects-2.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="21.1.2"
+        sha1="1eebb0afbc0c2b114760924c1954031414a40acd">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-customobjects-2.3.1_45eaef0436de326352a180f80a01f27fbd9aaa42.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/.gradle/caches/modules-2/files-2.1/com.j256.ormlite/ormlite-android/4.48/afa06f539a4026c10b247386312aa67404b80a16/ormlite-android-4.48.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="21.1.2"
+        sha1="afa06f539a4026c10b247386312aa67404b80a16">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/ormlite-android-4.48_7ce1a3ee4c341af450b58e84908b0f0eaf924108.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/libs/quickblox-android-sdk-videochat-2.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="21.1.2"
+        sha1="458785b63a4c7c658ab27fde399d85d85d66529f">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-videochat-2.3.1_a1f7f11b881a0957019cf5063937f74cfb4092e6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/libs/quickblox-android-sdk-content-2.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9fadf6a10e7440827b72006794a5893539994de2">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-content-2.3.1_8c37c3ef1b3d277b3583a14cf2dd5defc397ac2d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/android-studio/gradle/m2repository/commons-io/commons-io/2.4/commons-io-2.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/commons-io-2.4_77acdd8284e2b2038995dfc30acd54a813f4e6d4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/libs/quickblox-android-sdk-core-2.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1127a5be0704e4a53e86ffc0145bd96d4b9e4817">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-core-2.3.1_93777ce868d5f62f99b41e404a5475186e987a9c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/libs/quickblox-android-sdk-location-2.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="77b5109a4fbcdffb21e43040e50fcefe22b03895">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-location-2.3.1_6625a6a49af03df62e8cd8b77d9a04ac85ae4ccd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.2/3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf/gson-2.8.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/gson-2.8.2_4bc9eed812d9b8306b71bda22f26b9f51c410958.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/.android/build-cache/438588f4c054e4598cc7adedb801feb73c35af1c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="05e8375b2ec26e4508b2a745d5a0623ba95f9b49">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ElfixTeam/yoda/robohead/app/build/intermediates/pre-dexed/debug/classes_b8d16462d24d52d259370a950994bbcabb08c303.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/libs/quickblox-android-sdk-videochat-webrtc-2.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5389ed2546586d2b052581d6347270e16a488391">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-videochat-webrtc-2.3.1_5a3111966c3915bdcbf951101b65e557faabb77c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/libs/quickblox-android-sdk-core-2.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="21.1.2"
+        sha1="1127a5be0704e4a53e86ffc0145bd96d4b9e4817">
+        <dex dex="/home/adrobnych/AndroidStudioProjects/ELFi/core/app/build/intermediates/pre-dexed/debug/quickblox-android-sdk-core-2.3.1_9f4db040d1b83efe993a7a302e67a75bbd105457.jar" />
     </item>
     <item
         is-multidex="false"
