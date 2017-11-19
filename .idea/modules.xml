@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/api_contracts/api_contracts.iml" filepath="$PROJECT_DIR$/api_contracts/api_contracts.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/robohead.iml" filepath="$PROJECT_DIR$/robohead.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yoda_robohead.iml" filepath="$PROJECT_DIR$/yoda_robohead.iml" />
     </modules>
   </component>
 </project>

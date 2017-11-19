@@ -30,11 +30,11 @@ public class TTSReceiver extends BroadcastReceiver {
                 ((BrainApp) context.getApplicationContext()).getBrainActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        try {
-                            Thread.sleep(2000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+//                        try {
+//                            Thread.sleep(2000);
+//                        } catch (InterruptedException e) {
+//                            e.printStackTrace();
+//                        }
                         ((BrainApp) context.getApplicationContext()).getBrainActivity().updateFace();
                     }
                 });
