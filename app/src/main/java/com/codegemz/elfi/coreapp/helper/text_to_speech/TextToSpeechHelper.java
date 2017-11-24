@@ -1,6 +1,7 @@
 package com.codegemz.elfi.coreapp.helper.text_to_speech;
 
 import android.content.Context;
+import android.content.Intent;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 
@@ -15,6 +16,11 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 
 public class TextToSpeechHelper implements TextToSpeech.OnInitListener, TextToSpeech.OnUtteranceCompletedListener {
+
+    private static final String LIFEPIXEL = "com.elfirobotics.beehive.lifepixel";
+    private static final String EVENT = "com.elfirobotics.beehive.lifepixel.sense_intents.EVENT";
+    private static final String TALK_STOPPED_ACTION = "com.elfirobotics.beehive.sense_intents.TTS.STOPPED";
+
     private final TextToSpeech mTextToSpeech;
     // Used to queue up messages before the TTS engine is initialized...
     private final ConcurrentLinkedQueue<String> mBufferedMessages;
@@ -67,8 +73,9 @@ public class TextToSpeechHelper implements TextToSpeech.OnInitListener, TextToSp
         params.put(TextToSpeech.Engine.KEY_PARAM_STREAM,
                 "STREAM_NOTIFICATION");
         params.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID,"stringId");
+        Log.e("TTS", "speakText");
         mTextToSpeech.speak(message, TextToSpeech.QUEUE_ADD, params);
-        mTextToSpeech.playSilence(100, TextToSpeech.QUEUE_ADD, params);
+        //mTextToSpeech.playSilence(100, TextToSpeech.QUEUE_ADD, params);
     }
 
     //current echo strategy
@@ -79,6 +86,11 @@ public class TextToSpeechHelper implements TextToSpeech.OnInitListener, TextToSp
     //TODO: ivestigate if this is better echo strategy
     @Override
     public void onUtteranceCompleted(String utteranceId) {
+        Intent talkStoppedIntent = new Intent(LIFEPIXEL);
+        talkStoppedIntent.putExtra(EVENT, TALK_STOPPED_ACTION);
+        mContext.sendBroadcast(talkStoppedIntent);
+        Log.e("TTS", "intent was thrown to " + TALK_STOPPED_ACTION);
+
         Log.e("talk finished", "stop________emo");
         EmotionStateHelper emotionStateHelper = new EmotionStateHelper(mContext);
         emotionStateHelper.setCurrentEmotionType(EmojiType.Happy);
