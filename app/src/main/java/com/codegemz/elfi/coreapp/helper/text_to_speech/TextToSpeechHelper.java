@@ -73,6 +73,7 @@ public class TextToSpeechHelper implements TextToSpeech.OnInitListener, TextToSp
         params.put(TextToSpeech.Engine.KEY_PARAM_STREAM,
                 "STREAM_NOTIFICATION");
         params.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID,"stringId");
+        //params.put(TextToSpeech.Engine.KEY_FEATURE_NETWORK_SYNTHESIS, "true");
         Log.e("TTS", "speakText");
         mTextToSpeech.speak(message, TextToSpeech.QUEUE_ADD, params);
         //mTextToSpeech.playSilence(100, TextToSpeech.QUEUE_ADD, params);

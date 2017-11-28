@@ -42,6 +42,8 @@ public class CamPreviewView extends SurfaceView implements SurfaceHolder.Callbac
     private static final String RAW_VISITOR_ACTION = "com.elfirobotics.beehive.sense_intents.VISITOR.RAW";
 
     private static final String TAG = "Preview";
+    private static final String YODA_ADJUST_INTENT = "io.elfix.sense_intents.BOTTOM_MOTTORS.ADJUST";
+    private static final String YODA_ADJUST_INTENT_EXTRA = "io.elfix.sense_intents.extras.BOTTOM_MOTTORS.ADJUST_DIR";
     private SurfaceHolder mHolder;
     private Camera mCamera;
     private Bitmap mWorkBitmap;
@@ -217,15 +219,13 @@ public class CamPreviewView extends SurfaceView implements SurfaceHolder.Callbac
         mWorkBitmap = BitmapFactory.decodeStream(
                 new ByteArrayInputStream(baout.toByteArray()), null, bfo);
 
-//        if(((BrainActivity)context).isTargetFollowing())
-//            findTheBall(mWorkBitmap);
-//        else
-//            isNewTarget = true;
-
         Arrays.fill(mFaces, null);
         Arrays.fill(eyesMidPts, null);
-        //if(!((BrainActivity)context).isTargetFollowing())
-           mFaceDetector.findFaces(mWorkBitmap, mFaces);
+
+        mFaceDetector.findFaces(mWorkBitmap, mFaces);
+
+        float maxEyesDistance = -1;
+        float maxEyesPosX = -1;
 
         for (int i = 0; i < mFaces.length; i++)
         {
@@ -236,8 +236,10 @@ public class CamPreviewView extends SurfaceView implements SurfaceHolder.Callbac
                 eyesDistance[i] = face.eyesDistance();
                 eyesMidPts[i] = eyesMP;
 
-                //startTalk();
-                verifyAndSendRawVisitorIntent();
+                if(maxEyesDistance < eyesDistance[i]) {
+                    maxEyesDistance = eyesDistance[i];
+                    maxEyesPosX = eyesMP.x;
+                }
 
                 if (DEBUG)
                 {
@@ -251,14 +253,43 @@ public class CamPreviewView extends SurfaceView implements SurfaceHolder.Callbac
                 }
             }
             catch (Exception e){
-                //Log.d(TAG, "face detection exception: " + e);
+                Log.d(TAG, "face detection exception: " + e);
             }
+        }
+
+        if(maxEyesDistance != -1) {  // found closest face
+            verifyAndSendRawVisitorIntent();
+            Log.e(TAG, "eyes mpx: " + maxEyesPosX);
+            adjustYodaToFace(maxEyesPosX);
         }
 
         invalidate(); // use a dirty Rect?
 
         // Requeue the buffer so we get called again
         mCamera.addCallbackBuffer(data);
+    }
+
+    private void adjustYodaToFace(float maxEyesPosX) {
+        int w = mWorkBitmap.getWidth();
+
+        Intent adjustIntent = new Intent(YODA_ADJUST_INTENT);
+
+        if(maxEyesPosX > (w/2 + forwardSector) && maxEyesPosX < w) {
+            adjustIntent.putExtra(YODA_ADJUST_INTENT_EXTRA, "RIGHT");
+            context.sendBroadcast(adjustIntent);
+            Log.e(TAG, "adjust right intent thrown");
+            return;
+        }
+
+        if(maxEyesPosX > 0 && maxEyesPosX < (w/2 - forwardSector)) {
+            adjustIntent.putExtra(YODA_ADJUST_INTENT_EXTRA, "LEFT");
+            context.sendBroadcast(adjustIntent);
+            Log.e(TAG, "adjust left intent thrown");
+            return;
+        }
+
+        Log.e(TAG, "no adjust needed");
+        return;
     }
 
     private long lastTimeFaceDetectedMillis = 0;
@@ -283,7 +314,7 @@ public class CamPreviewView extends SurfaceView implements SurfaceHolder.Callbac
     int targetB = 20;
 
     int precission = 20;
-    int forwardSector = 0;
+    int forwardSector = 20;
 
 
     String last_command = "pesik_right_step";
