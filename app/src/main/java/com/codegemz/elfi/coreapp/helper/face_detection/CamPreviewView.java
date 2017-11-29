@@ -272,17 +272,18 @@ public class CamPreviewView extends SurfaceView implements SurfaceHolder.Callbac
     private void adjustYodaToFace(float maxEyesPosX) {
         int w = mWorkBitmap.getWidth();
 
-        Intent adjustIntent = new Intent(YODA_ADJUST_INTENT);
+        Intent adjustIntent = new Intent(LIFEPIXEL);
+        adjustIntent.putExtra(EVENT, YODA_ADJUST_INTENT);
 
         if(maxEyesPosX > (w/2 + forwardSector) && maxEyesPosX < w) {
-            adjustIntent.putExtra(YODA_ADJUST_INTENT_EXTRA, "RIGHT");
+            adjustIntent.putExtra(YODA_ADJUST_INTENT_EXTRA, "R");
             context.sendBroadcast(adjustIntent);
             Log.e(TAG, "adjust right intent thrown");
             return;
         }
 
         if(maxEyesPosX > 0 && maxEyesPosX < (w/2 - forwardSector)) {
-            adjustIntent.putExtra(YODA_ADJUST_INTENT_EXTRA, "LEFT");
+            adjustIntent.putExtra(YODA_ADJUST_INTENT_EXTRA, "L");
             context.sendBroadcast(adjustIntent);
             Log.e(TAG, "adjust left intent thrown");
             return;
