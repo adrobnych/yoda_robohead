@@ -297,7 +297,7 @@ public class CamPreviewView extends SurfaceView implements SurfaceHolder.Callbac
 
     private void verifyAndSendRawVisitorIntent() {
         long currentMillis = System.currentTimeMillis();
-        if(currentMillis - lastTimeFaceDetectedMillis > 5000){
+        if(currentMillis - lastTimeFaceDetectedMillis > 500000L){
             Intent rawVisitorIntent = new Intent(LIFEPIXEL);
             rawVisitorIntent.putExtra(EVENT, RAW_VISITOR_ACTION);
             context.sendBroadcast(rawVisitorIntent);
